@@ -13,12 +13,13 @@ import (
 var DB *gorm.DB
 
 func ConnectDB() {
+	env := config.GetEnv()
 	dsn := fmt.Sprintf("%s:%s@tcp(%s:%s)/%s?charset=utf8mb4&parseTime=True&loc=Local",
-		config.GetEnv("DB_USER"),
-		config.GetEnv("DB_PASS"),
-		config.GetEnv("DB_HOST"),
-		config.GetEnv("DB_PORT"),
-		config.GetEnv("DB_NAME"),
+		env.DB_USER,
+		env.DB_PASS,
+		env.DB_HOST,
+		env.DB_PORT,
+		env.DB_NAME,
 	)
 
 	var err error

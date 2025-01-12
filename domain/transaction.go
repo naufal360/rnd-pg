@@ -9,8 +9,10 @@ type Transaction struct {
 	PaymentType       string    `json:"payment_type"`
 	TransactionTime   time.Time `json:"transaction_time"`
 	TransactionStatus string    `json:"transaction_status"`
-	CustomerName      string    `json:"customer_name"`
+	CustomerFirstName string    `json:"customer_first_name"`
+	CustomerLastName  string    `json:"customer_last_name"`
 	CustomerEmail     string    `json:"customer_email"`
+	PaymentURL        string    `json:"payment_url"`
 	CreatedAt         time.Time `json:"created_at"`
 	UpdatedAt         time.Time `json:"updated_at"`
 }
